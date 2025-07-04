@@ -1,5 +1,22 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello World");
+    public static void main(String[] args) throws IOException {
+        List<Node> processesList = new ArrayList<>();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.print("Enter number of processes: \t");
+        int n = Integer.parseInt(br.readLine());
+
+        for (int i = 0; i < n; i++) {
+            Node process = new Node(i + 1);
+            processesList.add(process);
+        }
+
+        br.close();
     }
 }
