@@ -14,4 +14,7 @@ public class Node {
     }
 
     // Methods
+    public void setNext(Node x) {
+        this.next = x;
+    }
 }
