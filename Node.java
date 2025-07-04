@@ -4,7 +4,7 @@ import java.util.Queue;
 
 public class Node implements Runnable {
     // Attributes
-    public static Queue<Integer> q;
+    public static Queue<Integer> q = new ArrayDeque<>();
     private int pid; // process id
     private Node next; // pointer to next node
     private boolean hasToken;
@@ -13,7 +13,6 @@ public class Node implements Runnable {
     // Constructor
     public Node(int pid) {
         this.pid = pid;
-        q = new ArrayDeque<>();
         this.hasToken = false;
         this.wantToEnter = false;
     }
@@ -24,7 +23,7 @@ public class Node implements Runnable {
     }
 
     public void setToken(boolean b) {
-        this.hasToken = true;
+        this.hasToken = b;
     }
 
     @Override
