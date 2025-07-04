@@ -21,7 +21,9 @@ public class Main {
         for (int i = 0; i < n - 1; i++) {
             processesList.get(i).setNext(processesList.get(i + 1));
         }
-        processesList.get(n - 1).setNext(processesList.get(0));
+        processesList.get(n - 1).setNext(processesList.get(0)); // connecting the last node with the 0th process
+
+        processesList.get(0).setToken(true);
 
         br.close();
     }
