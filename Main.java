@@ -17,6 +17,12 @@ public class Main {
             processesList.add(process);
         }
 
+        // Creating the ring
+        for (int i = 0; i < n - 1; i++) {
+            processesList.get(i).setNext(processesList.get(i + 1));
+        }
+        processesList.get(n - 1).setNext(processesList.get(0));
+
         br.close();
     }
 }
