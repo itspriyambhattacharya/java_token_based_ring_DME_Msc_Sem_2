@@ -1,3 +1,5 @@
+import java.util.Queue;
+
 public class Message {
 
     private String msgType;
@@ -6,5 +8,9 @@ public class Message {
     public Message(String msgType, int pid) {
         this.msgType = msgType;
         this.processId = pid;
+    }
+
+    public Message(String msgType, int pid, Queue<Integer> q) {
+        this.msgType = msgType;
     }
 }
