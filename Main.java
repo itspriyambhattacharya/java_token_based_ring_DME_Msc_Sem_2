@@ -23,7 +23,12 @@ public class Main {
         }
         processesList.get(n - 1).setNext(processesList.get(0)); // connecting the last node with the 0th process
 
-        processesList.get(0).setToken(true);
+        processesList.get(0).setToken(true); // setting the first node of the list will always have the token
+
+        for (Node node : processesList) {
+            Thread th = new Thread(node);
+            th.start();
+        }
 
         br.close();
     }
